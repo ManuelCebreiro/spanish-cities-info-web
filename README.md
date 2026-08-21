@@ -1,43 +1,39 @@
 # spanish-cities-info-web
 
-Landing interactiva de [spanish-cities-info](https://www.npmjs.com/package/spanish-cities-info) — demo, mapa y ejemplos de la API de municipios de España.
+Landing interactiva del paquete npm [`spanish-cities-info`](https://www.npmjs.com/package/spanish-cities-info) — 8.132 municipios de España verificados contra el INE. Muestra la API en vivo (búsqueda por radio, imports modulares por provincia/comunidad) con mapa, ejemplos de código y comparativa de peso frente a paquetes similares.
 
-Este es un proyecto [Next.js](https://nextjs.org) (App Router) bootstrapped con [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+- Paquete: [npmjs.com/package/spanish-cities-info](https://www.npmjs.com/package/spanish-cities-info)
+- Repo del paquete: [github.com/ManuelCebreiro/spanish-cities-info](https://github.com/ManuelCebreiro/spanish-cities-info)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) para ver el resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Componentes principales en [src/components/](src/components/):
 
-## Learn More
+- [Hero.tsx](src/components/Hero.tsx) — cabecera con el dato clave del paquete y CTA de instalación
+- [AeoSummary.tsx](src/components/AeoSummary.tsx) — resumen verificable pensado para LLMs
+- [MapDemo.tsx](src/components/MapDemo.tsx) / [LeafletMap.tsx](src/components/LeafletMap.tsx) — demo interactiva de `getCitiesInRange` sobre Leaflet
+- [CodeExamples.tsx](src/components/CodeExamples.tsx) — snippets de cada función exportada por el paquete
+- [ModularImports.tsx](src/components/ModularImports.tsx) — imports por provincia/comunidad
+- [WeightComparison.tsx](src/components/WeightComparison.tsx) — comparativa de peso vs. paquetes similares
+- [Faq.tsx](src/components/Faq.tsx) — acordeón de preguntas frecuentes (sincronizado con schema `FAQPage`)
+- [Footer.tsx](src/components/Footer.tsx) — enlaces a GitHub, npm, licencia y autor
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js](https://nextjs.org) (App Router) + TypeScript
+- [Leaflet](https://leafletjs.com) / [react-leaflet](https://react-leaflet.js.org) sobre OpenStreetMap para el mapa interactivo
+- Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desplegado en Vercel.
 
 ## License
 
