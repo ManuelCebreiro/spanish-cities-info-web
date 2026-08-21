@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://cities.manuelcebreiro.com/sitemap.xml",
+    sitemap: "https://spanish-cities-info-web.vercel.app/sitemap.xml",
   };
 }

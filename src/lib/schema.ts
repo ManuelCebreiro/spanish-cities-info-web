@@ -1,6 +1,6 @@
 import { FAQ_ITEMS, REPO_URL, NPM_URL, AUTHOR_URL, STATS } from "@/lib/content";
 
-const SITE_URL = "https://cities.manuelcebreiro.com";
+const SITE_URL = "https://spanish-cities-info-web.vercel.app";
 const AUTHOR_ID = `${SITE_URL}#author`;
 
 export function personSchema() {

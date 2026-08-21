@@ -21,7 +21,7 @@ const plexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cities.manuelcebreiro.com"),
+  metadataBase: new URL("https://spanish-cities-info-web.vercel.app"),
   title: {
     default: "spanish-cities-info — 8.132 municipios de España en npm",
     template: "%s — spanish-cities-info",
@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   description:
     "Paquete npm con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio, imports modulares por provincia/comunidad, TypeScript, ~330 KB / ~125 KB gzip.",
   authors: [{ name: "Manuel Cebreiro", url: "https://manuelcebreiro.com" }],
+  verification: {
+    google: "ZsPEbAXsJ1gh9DO7kIC9cIDDwy57GF4Y4xqdiBcmOZk",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
