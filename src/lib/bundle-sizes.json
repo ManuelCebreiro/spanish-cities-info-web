@@ -1,0 +1,25 @@
+{
+  "measuredAt": "2026-08-21T08:11:35.756Z",
+  "results": {
+    "full": {
+      "label": "import completo",
+      "minifiedBytes": 341823,
+      "gzipBytes": 128872
+    },
+    "comunidad-galicia": {
+      "label": "spanish-cities-info/comunidades/galicia",
+      "minifiedBytes": 13697,
+      "gzipBytes": 5525
+    },
+    "provincia-a-coruna": {
+      "label": "spanish-cities-info/provincias/a-coruna",
+      "minifiedBytes": 4470,
+      "gzipBytes": 2008
+    },
+    "provincia-lugo": {
+      "label": "spanish-cities-info/provincias/lugo",
+      "minifiedBytes": 3561,
+      "gzipBytes": 1666
+    }
+  }
+}

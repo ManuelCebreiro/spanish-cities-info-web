@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta — carta náutica / papel técnico */
+  --paper: #f0f1ea;
+  --paper-raised: #e7e9de;
+  --ink: #1b2a4a;
+  --ink-muted: #4a5568;
+  --topo-green: #4a6741;
+  --ochre: #c17817;
+  --chart-red: #a83c32;
+  --line: #c9cbb8;
+
+  /* Tipografía */
+  --font-display: var(--font-big-shoulders);
+  --font-mono: var(--font-plex-mono);
+  --font-body: var(--font-plex-sans);
+
+  /* Forma */
+  --radius: 2px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-topo-green: var(--topo-green);
+  --color-ochre: var(--ochre);
+  --color-chart-red: var(--chart-red);
+  --color-line: var(--line);
+
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-body: var(--font-body);
+
+  --radius-token: var(--radius);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-feature-settings: "tnum" 1;
+}
+
+::selection {
+  background: var(--ochre);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 2px;
+}
+
+/* Mapa Leaflet: tiles desaturados para encajar con la paleta de carta náutica */
+.map-mono-tiles {
+  filter: grayscale(1) brightness(1.08) contrast(0.95);
+}
+
+.leaflet-container {
+  font-family: var(--font-body);
+  background: var(--paper);
+}
+
+.leaflet-control-attribution {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  background: var(--paper) !important;
+  color: var(--ink-muted) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
