@@ -32,7 +32,7 @@ export default function MiniLeafletMap({ points }: { points: PreviewPoint[] }) {
           key={p.name}
           center={[p.lat, p.lon]}
           radius={5}
-          pathOptions={{ color: "#4a6741", weight: 1.5, fillColor: "#c17817", fillOpacity: 1 }}
+          pathOptions={{ color: "#4a6741", weight: 1.5, fillColor: "var(--accent)", fillOpacity: 1 }}
         />
       ))}
     </MapContainer>

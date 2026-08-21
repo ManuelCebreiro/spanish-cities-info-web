@@ -63,7 +63,7 @@ export function CodeExamples() {
               onClick={() => setActiveIndex(i)}
               className={`border-b-2 px-3 py-2 font-mono text-xs tracking-wide whitespace-nowrap uppercase transition-colors ${
                 selected
-                  ? "border-ochre text-ink"
+                  ? "border-accent text-ink"
                   : "border-transparent text-ink-muted hover:text-ink"
               }`}
             >
@@ -84,7 +84,7 @@ export function CodeExamples() {
           className="pt-6"
         >
           <p className="max-w-2xl text-sm text-ink-muted">{ex.description}</p>
-          <pre className="mt-4 overflow-x-auto border-l-2 border-ochre bg-paper-raised p-4 font-mono text-sm leading-relaxed">
+          <pre className="mt-4 overflow-x-auto border-l-2 border-accent bg-paper-raised p-4 font-mono text-sm leading-relaxed">
             <code>{ex.code}</code>
           </pre>
         </div>

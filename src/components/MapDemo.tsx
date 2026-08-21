@@ -103,7 +103,7 @@ export function MapDemo() {
             onFocus={() => setComboOpen(true)}
             onBlur={() => setTimeout(() => setComboOpen(false), 120)}
             onKeyDown={onInputKeyDown}
-            className="w-full border border-line bg-paper px-3 py-2 font-mono text-sm text-ink focus-visible:outline-2 focus-visible:outline-ochre"
+            className="w-full border border-line bg-paper px-3 py-2 font-mono text-sm text-ink focus-visible:outline-2 focus-visible:outline-accent"
           />
           {comboOpen && suggestions.length > 0 && (
             <ul
@@ -123,7 +123,7 @@ export function MapDemo() {
                     selectCity(c);
                   }}
                   className={`cursor-pointer px-3 py-2 font-mono text-sm ${
-                    i === activeOption ? "bg-ochre text-paper" : "text-ink hover:bg-paper-raised"
+                    i === activeOption ? "bg-accent text-paper" : "text-ink hover:bg-paper-raised"
                   }`}
                 >
                   {c.name} <span className="text-xs opacity-70">({c.province})</span>
@@ -146,14 +146,14 @@ export function MapDemo() {
             step={1}
             value={radius}
             onChange={(e) => setRadius(Number(e.target.value))}
-            className="w-full accent-ochre"
+            className="w-full accent-accent"
           />
         </div>
 
         <p className="font-mono text-sm text-ink-muted">
           {referenceCity ? (
             <>
-              <strong className="text-ochre tabular-nums">{results.length}</strong>{" "}
+              <strong className="text-accent tabular-nums">{results.length}</strong>{" "}
               municipios en {radius} km alrededor de {referenceCity.name}
             </>
           ) : (

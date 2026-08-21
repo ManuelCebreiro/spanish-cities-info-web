@@ -34,7 +34,7 @@ export function WeightComparison() {
                   </td>
                   <td
                     className={`py-3 pr-4 font-mono text-sm tabular-nums ${
-                      row.isSubject ? "text-ochre" : "text-ink-muted"
+                      row.isSubject ? "text-accent" : "text-ink-muted"
                     }`}
                   >
                     {row.weight}

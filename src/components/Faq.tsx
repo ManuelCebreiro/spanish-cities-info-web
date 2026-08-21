@@ -12,7 +12,7 @@ export function Faq() {
               <span className="text-ink">{item.question}</span>
               <span
                 aria-hidden="true"
-                className="mt-0.5 shrink-0 font-mono text-ochre select-none"
+                className="mt-0.5 shrink-0 font-mono text-accent select-none"
               >
                 <span className="inline group-open:hidden">+</span>
                 <span className="hidden group-open:inline">−</span>

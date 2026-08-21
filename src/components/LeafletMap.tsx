@@ -58,12 +58,12 @@ export default function LeafletMap({
             <Circle
               center={[referenceCity.latitude, referenceCity.longitude]}
               radius={radiusKm * 1000}
-              pathOptions={{ color: "#c17817", weight: 1.5, fillColor: "#c17817", fillOpacity: 0.08 }}
+              pathOptions={{ color: "var(--accent)", weight: 1.5, fillColor: "var(--accent)", fillOpacity: 0.08 }}
             />
             <CircleMarker
               center={[referenceCity.latitude, referenceCity.longitude]}
               radius={7}
-              pathOptions={{ color: "#1b2a4a", weight: 2, fillColor: "#c17817", fillOpacity: 1 }}
+              pathOptions={{ color: "#1b2a4a", weight: 2, fillColor: "var(--accent)", fillOpacity: 1 }}
             >
             </CircleMarker>
           </>

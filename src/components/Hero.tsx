@@ -25,22 +25,22 @@ export function Hero() {
             con gzip en el import principal.
           </p>
 
-          <div className="mt-8 inline-flex items-center gap-3 border-l-2 border-ochre bg-paper-raised px-4 py-3 font-mono text-sm">
-            <span className="text-ochre select-none" aria-hidden="true">
+          <div className="mt-8 inline-flex items-center gap-3 border-l-2 border-accent bg-paper-raised px-4 py-3 font-mono text-sm">
+            <span className="text-accent select-none" aria-hidden="true">
               $
             </span>
             <code>npm install spanish-cities-info</code>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-sm tracking-wide uppercase">
-            <a href="#demo" className="border-b border-ink pb-0.5 hover:border-ochre hover:text-ochre">
+            <a href="#demo" className="border-b border-ink pb-0.5 hover:border-accent hover:text-accent">
               Ver demo ↓
             </a>
             <a
               href={REPO_URL}
               target="_blank"
               rel="noreferrer"
-              className="border-b border-transparent pb-0.5 text-ink-muted hover:border-ochre hover:text-ochre"
+              className="border-b border-transparent pb-0.5 text-ink-muted hover:border-accent hover:text-accent"
             >
               GitHub
             </a>
@@ -48,7 +48,7 @@ export function Hero() {
               href={NPM_URL}
               target="_blank"
               rel="noreferrer"
-              className="border-b border-transparent pb-0.5 text-ink-muted hover:border-ochre hover:text-ochre"
+              className="border-b border-transparent pb-0.5 text-ink-muted hover:border-accent hover:text-accent"
             >
               npm
             </a>

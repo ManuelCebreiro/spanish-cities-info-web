@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* Paleta — carta náutica / papel técnico */
-  --paper: #f0f1ea;
-  --paper-raised: #e7e9de;
+  /* Paleta — carta náutica */
+  --paper: #eef1f3;
+  --paper-raised: #e1e7e9;
   --ink: #1b2a4a;
   --ink-muted: #4a5568;
   --topo-green: #4a6741;
-  --ochre: #c17817;
+  --accent: #1e5c8c;
   --chart-red: #a83c32;
-  --line: #c9cbb8;
+  --line: #c7cdd3;
 
   /* Tipografía */
   --font-display: var(--font-big-shoulders);
@@ -26,7 +26,7 @@
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-topo-green: var(--topo-green);
-  --color-ochre: var(--ochre);
+  --color-accent: var(--accent);
   --color-chart-red: var(--chart-red);
   --color-line: var(--line);
 
@@ -53,12 +53,12 @@ body {
 }
 
 ::selection {
-  background: var(--ochre);
+  background: var(--accent);
   color: var(--paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--ochre);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 

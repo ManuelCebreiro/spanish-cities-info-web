@@ -20,7 +20,7 @@ export function ModularImports() {
       <SectionMarker sheetNumber="05" title="Imports modulares" />
 
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-        <div>
+        <div className="min-w-0">
           <p className="max-w-xl text-ink-muted">
             Si solo necesitas los municipios de una provincia o comunidad
             autónoma, puedes importar directamente esa zona sin cargar el
@@ -53,7 +53,7 @@ import { cities } from 'spanish-cities-info/comunidades/galicia';
           </p>
         </div>
 
-        <div className="border border-line bg-paper-raised p-6">
+        <div className="min-w-0 border border-line bg-paper-raised p-6">
           <p className="font-mono text-xs tracking-widest text-ink-muted uppercase">
             Peso real (gzip), medido con esbuild
           </p>
@@ -68,7 +68,7 @@ import { cities } from 'spanish-cities-info/comunidades/galicia';
                 </div>
                 <div className="mt-1.5 h-2 w-full bg-paper">
                   <div
-                    className={bar.highlight ? "h-full bg-ochre" : "h-full bg-ink-muted"}
+                    className={bar.highlight ? "h-full bg-accent" : "h-full bg-ink-muted"}
                     style={{ width: `${(bar.gzipKB / maxKB) * 100}%` }}
                   />
                 </div>

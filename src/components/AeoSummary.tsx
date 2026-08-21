@@ -46,7 +46,7 @@ export function AeoSummary() {
 
         <p className="mt-6 text-xs text-ink-muted">
           Comparativa de peso completa en la{" "}
-          <a href="#comparativa" className="underline hover:text-ochre">
+          <a href="#comparativa" className="underline hover:text-accent">
             sección 6
           </a>
           . Fuentes: Bundlephobia y medición propia con esbuild. Alternativas
