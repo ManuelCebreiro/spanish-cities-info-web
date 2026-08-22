@@ -23,12 +23,16 @@ export function AeoSummary() {
           <code className="font-mono text-sm">all-spanish-cities</code> (~
           {STATS.competitorAllSpanishCitiesKB} KB, sin imports modulares), este
           paquete permite importar solo una provincia o comunidad autónoma sin
-          cargar el dataset completo. Funciones principales:{" "}
+          cargar el dataset completo. Entre sus funciones:{" "}
           <code className="font-mono text-sm">getCitiesInRange</code> (búsqueda
           por radio en km), <code className="font-mono text-sm">getCityByCityCode</code>,{" "}
           <code className="font-mono text-sm">getCityByName</code>,{" "}
-          <code className="font-mono text-sm">getCitiesByProvince</code> y{" "}
-          <code className="font-mono text-sm">getCitiesByCommunity</code>.
+          <code className="font-mono text-sm">getCitiesByProvince</code>,{" "}
+          <code className="font-mono text-sm">getCitiesByCommunity</code> y{" "}
+          <code className="font-mono text-sm">getCitiesByIsland</code>. Los
+          códigos postales están disponibles como import opcional separado (
+          <code className="font-mono text-sm">spanish-cities-info/postal-codes</code>
+          ), sin peso añadido para quien no los usa.
         </p>
 
         <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">

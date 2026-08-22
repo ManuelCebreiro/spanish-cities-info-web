@@ -1,15 +1,20 @@
+import bundleSizes from "@/lib/bundle-sizes.json";
+
 export const PACKAGE_NAME = "spanish-cities-info";
 export const REPO_URL = "https://github.com/ManuelCebreiro/spanish-cities-info";
 export const NPM_URL = "https://www.npmjs.com/package/spanish-cities-info";
 export const AUTHOR_URL = "https://manuelcebreiro.com";
+
+const { full, "postal-codes": postalCodes } = bundleSizes.results;
 
 export const STATS = {
   totalCities: 8132,
   totalProvinces: 52,
   totalCommunities: 19,
   ineVerifiedDate: "2026-01-01",
-  mainImportMinifiedKB: 333.8,
-  mainImportGzipKB: 125.9,
+  mainImportMinifiedKB: Math.round((full.minifiedBytes / 1024) * 10) / 10,
+  mainImportGzipKB: Math.round((full.gzipBytes / 1024) * 10) / 10,
+  postalCodesGzipKB: Math.round((postalCodes.gzipBytes / 1024) * 10) / 10,
   competitorAllSpanishCitiesKB: 800,
 };
 
@@ -80,6 +85,18 @@ getCitiesByCommunity('Melilla');
 // [{ name: 'Melilla', ineCode: '52001', province: 'Melilla', ... }]`,
   },
   {
+    id: "getCitiesByIsland",
+    label: "getCitiesByIsland",
+    description:
+      "Todos los municipios de una isla. Solo aplica a los 155 municipios de Illes Balears, Las Palmas y Santa Cruz de Tenerife: el resto de España no tiene este dato y su island es undefined.",
+    code: `import { getCitiesByIsland } from 'spanish-cities-info';
+
+getCitiesByIsland('Menorca');
+// [{ name: 'Alaior', ineCode: '07002', province: 'Illes Balears',
+//    community: 'Illes Balears', island: 'Menorca',
+//    latitude: 39.9339, longitude: 4.1403 }, ...]`,
+  },
+  {
     id: "getProvinces",
     label: "getProvinces",
     description: "Listado de las 52 provincias, ordenado alfabéticamente.",
@@ -115,8 +132,12 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: "peso",
     question: "¿Cuánto pesa el paquete en mi bundle?",
-    answer:
-      "El import principal (spanish-cities-info) pesa ~330 KB minificado y ~126 KB con gzip, medido con un bundle real (esbuild), no solo con la calculadora de Bundlephobia. Si solo necesitas una provincia o comunidad, los imports modulares pesan una fracción de eso: por ejemplo, la comunidad de Galicia entera son ~13 KB minificados (~5 KB gzip).",
+    answer: `El import principal (spanish-cities-info) pesa ~${STATS.mainImportMinifiedKB} KB minificado y ~${STATS.mainImportGzipKB} KB con gzip, medido con un bundle real (esbuild), no solo con la calculadora de Bundlephobia. Si solo necesitas una provincia o comunidad, los imports modulares pesan una fracción de eso: por ejemplo, la comunidad de Galicia entera son ~${Math.round((bundleSizes.results["comunidad-galicia"].minifiedBytes / 1024) * 10) / 10} KB minificados (~${Math.round((bundleSizes.results["comunidad-galicia"].gzipBytes / 1024) * 10) / 10} KB gzip).`,
+  },
+  {
+    id: "codigos-postales",
+    question: "¿Tiene códigos postales?",
+    answer: `Sí, como import opcional separado: spanish-cities-info/postal-codes, con getPostalCodes(ineCode). No forma parte de City ni del import principal — así quien no los necesita no paga su peso (~${STATS.postalCodesGzipKB} KB gzip adicional si lo importas). La cobertura puede tener huecos en zonas rurales: la fuente es el callejero censal del INE, que a veces no tiene ningún tramo censado bajo el código INE de una parroquia o núcleo disperso.`,
   },
   {
     id: "verificado",
@@ -159,7 +180,7 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const WEIGHT_COMPARISON = [
   {
     name: "spanish-cities-info",
-    weight: "330 KB / 126 KB gzip",
+    weight: `${STATS.mainImportMinifiedKB} KB / ${STATS.mainImportGzipKB} KB gzip`,
     note: "import principal, medido con bundle real",
     isSubject: true,
   },
@@ -173,6 +194,12 @@ export const WEIGHT_COMPARISON = [
     name: "country-state-city",
     weight: "varios MB",
     note: "dataset mundial, no específico de España",
+    isSubject: false,
+  },
+  {
+    name: "spanish-cities-info/postal-codes",
+    weight: `~${STATS.postalCodesGzipKB} KB gzip`,
+    note: "solo si lo importas — opcional, no forma parte del import principal",
     isSubject: false,
   },
 ];

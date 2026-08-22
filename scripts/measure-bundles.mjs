@@ -27,6 +27,11 @@ const cases = [
     label: "spanish-cities-info/provincias/lugo",
     entry: `export { cities } from 'spanish-cities-info/provincias/lugo';`,
   },
+  {
+    id: "postal-codes",
+    label: "spanish-cities-info/postal-codes",
+    entry: `export { getPostalCodes } from 'spanish-cities-info/postal-codes';`,
+  },
 ];
 
 const dir = path.join(process.cwd(), ".tmp-bundle-check");

@@ -14,8 +14,7 @@ import { STATS } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `spanish-cities-info — ${STATS.totalCities.toLocaleString("es-ES")} municipios de España en npm`;
-  const description =
-    "Paquete npm con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio en km, imports modulares por provincia/comunidad, TypeScript, ~330 KB / ~125 KB gzip.";
+  const description = `Paquete npm con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio en km, imports modulares por provincia/comunidad, códigos postales opcionales, TypeScript, ~${STATS.mainImportMinifiedKB} KB / ~${STATS.mainImportGzipKB} KB gzip.`;
 
   return {
     title,

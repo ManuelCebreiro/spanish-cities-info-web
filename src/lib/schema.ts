@@ -48,7 +48,7 @@ export function softwareSchema() {
     "@type": "SoftwareSourceCode",
     name: "spanish-cities-info",
     description:
-      "Paquete npm en TypeScript con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio, imports modulares por provincia y comunidad autónoma.",
+      "Paquete npm en TypeScript con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio, por isla, imports modulares por provincia y comunidad autónoma, códigos postales como import opcional.",
     codeRepository: REPO_URL,
     programmingLanguage: "TypeScript",
     runtimePlatform: "Node.js",
@@ -63,6 +63,8 @@ export function softwareSchema() {
       "provincias españa json",
       "codigo INE",
       "comunidades autónomas españa",
+      "codigos postales españa npm",
+      "municipios por isla españa",
       "typescript npm package",
     ].join(", "),
   };

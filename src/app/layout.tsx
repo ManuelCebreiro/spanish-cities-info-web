@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s — spanish-cities-info",
   },
   description:
-    "Paquete npm con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio, imports modulares por provincia/comunidad, TypeScript, ~330 KB / ~125 KB gzip.",
+    "Paquete npm con los 8.132 municipios de España verificados contra el INE. Búsqueda por radio, imports modulares por provincia/comunidad, códigos postales opcionales, TypeScript, ~337 KB / ~126 KB gzip.",
   authors: [{ name: "Manuel Cebreiro", url: "https://manuelcebreiro.com" }],
   verification: {
     google: "ZsPEbAXsJ1gh9DO7kIC9cIDDwy57GF4Y4xqdiBcmOZk",
